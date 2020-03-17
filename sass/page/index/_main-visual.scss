@@ -1,0 +1,34 @@
+.main-visual {
+  background: url(../../../img/mv.png) no-repeat center center / cover;
+  height: $main-visual-height;
+  position: relative;
+  width: 100%;
+
+  @include mq('tab') {
+    height: $main-visual-height-sp;
+  }
+
+  .inner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 524px;
+
+    @include mq('tab') {
+      position: relative;
+      width: 100%;
+      left: auto;
+      max-width: none;
+      padding: 0 16px;
+
+      .btn-wrap {
+        text-align: center;
+      }
+    }
+
+    h2, p {
+      margin-bottom: 40px;
+    }
+  }
+}

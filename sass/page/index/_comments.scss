@@ -1,0 +1,108 @@
+.comments {
+  background: $cr-bg;
+  padding-bottom: 142px;
+  position: relative;
+
+  @include mq('tab') {
+    background: $cr-bg-black;
+    padding: {
+      left: 16px;
+      right: 16px;
+      bottom: 0;
+    }
+  }
+
+  .wrap {
+    width: 644px + 537px;
+    margin: 0 auto;
+
+    @include mq('tab') {
+      width: 100%;
+      position: relative;
+      top: -60px;
+    }
+
+    .inner {
+      background: $cr-white;
+      box-shadow: 0px 5px 12px #3e3e3e33;
+      padding: 80px 40px 120px;
+      position: relative;
+      width: 644px;
+      z-index: 3;
+
+      @include mq('tab') {
+        padding: {
+          top: 40px;
+          left: 20px;
+          right: 20px;
+          bottom: 40px;
+        }
+        width: 100%;
+      }
+
+      h2 {
+        margin-bottom: 80px;
+        
+        @include mq('tab') {
+          margin-bottom: 40px;
+          // text-align: center;
+        }
+      }
+
+      dl {
+        display: flex;
+
+        + dl {
+          margin-top: 80px;
+
+          @include mq('tab') {
+            margin-top: 30px;
+          }
+        }
+        
+        dt {
+          flex: 0 0 100px;
+          margin-right: 50px;
+
+          @include mq('tab') {
+            margin-right: 24px;
+          }
+        }
+
+        dd {
+          
+          @include mq('sp') {
+            font-size: 14px;
+          }
+        }
+      }
+
+      &::after {
+        content: url(../../../img/comments3.png);
+        position: absolute;
+        right: 0;
+        top: 126px;
+        transform: translateX(100%);
+        z-index: 2;
+
+        @include mq('tab') {
+          content: "";
+        }
+      }
+    }
+  }
+  
+  .bg-black {
+    background: $cr-bg-black;
+    height: 596px;
+    margin: 0 auto 0 0;
+    position: absolute;
+    top: 150px;
+    width: 980px;
+    z-index: 1;
+
+    @include mq('tab') {
+      display: none;
+    }
+  }
+}

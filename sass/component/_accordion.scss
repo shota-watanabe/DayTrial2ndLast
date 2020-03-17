@@ -1,0 +1,86 @@
+.js-accordion {
+  position: relative;
+  
+  // 矢印が上下反転するスタイル
+  &.arrow {
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      // right: 25px;
+      top: 38%;
+      transition: all 0.2s ease-in-out;
+      display: block;
+      width: 8px;
+      height: 8px;
+      border-top: solid 2px $cr-txt;
+      border-right: solid 2px $cr-txt;
+      transform: rotate(135deg);
+    }
+
+    &.open::after {
+      transform: rotate(-45deg);
+      top: 45%;
+    }
+  }
+
+  // プラスマイナス反転するスタイル
+  &.pm {
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 0;
+      // right: 25px;
+      width: 15px;
+      height: 2px;
+      /*縦線に*/
+      transform: rotate(90deg);
+      background: $cr-txt;
+      transition: all .3s ease-in-out;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 0;
+      // right: 25px;
+      /*横線*/
+      width: 15px;
+      height: 2px;
+      background: $cr-txt;
+      transition: all .2s ease-in-out;
+    }
+
+    &.open::before {
+      transform: rotate(180deg);
+    }
+
+    &.open::after {
+      opacity: 0;
+    }
+  }
+
+  // SVG（プラスマイナス）
+  &.pm--svg {
+
+    &::after {
+      content: url(../../img/plus.svg);
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+
+    &.open::after {
+      content: url(../../img/minus.svg);
+      position: absolute;
+      top: 50%; 
+      right: 0;
+      transform: translateY(-18px);// 適当
+    }
+  }
+}

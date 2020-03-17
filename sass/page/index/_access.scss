@@ -1,0 +1,70 @@
+.access {
+  background: $cr-bg;
+  position: relative;
+  padding-bottom: 206px;
+
+  @include mq('tab') {
+    padding-bottom: 0;
+  }
+
+  .inner {
+    // background: $cr-bg-black;
+    position: relative;
+    background: linear-gradient(to right, $cr-bg-black 0%, $cr-bg-black 980px, $cr-bg 980px, $cr-bg 100%);
+    color: $cr-white;
+    width: 1180px;
+    padding: 130px 0 178px 93px;
+
+    @include mq('tab') {
+      padding: {
+        top: 40px;
+        left: 16px;
+        right: 16px;
+        bottom: 40px;
+      }
+      width: 100%;
+    }
+    
+    h2 {
+      margin-bottom: 40px;
+    }
+
+    p {
+      margin-bottom: 40px;
+
+      @include mq('sp') {
+        font-size: 12px;
+        line-height: 2;
+      }
+    }
+    
+    .map-wrap {
+      position: absolute;
+      top: 130px;
+      right: 0;
+      width: 720px;
+
+      @include mq('tab') {
+        position: relative;
+        top: 0;
+        width: 100%;
+        margin-bottom: 40px;
+      }
+    
+      .iframe-wrap {
+        position: relative;
+        width: 100%;
+        // width: 720px;
+        padding-top: 71.527778%; // 高さ ÷ 横幅
+
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}

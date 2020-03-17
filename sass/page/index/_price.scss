@@ -1,0 +1,56 @@
+.price {
+  background: $cr-bg;
+  padding: 80px 0 130px;
+
+  @include mq('tab') {
+    padding: {
+      top: 40px;
+      left: 16px;
+      right: 16px;
+    }
+  }
+  
+  .inner {
+    margin: 0 auto;
+    max-width: 960px;
+    text-align: center;
+
+    h2 {
+      margin-bottom: 80px;
+
+      @include mq('tab') {
+        margin-bottom: 40px;
+      }
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 24px;
+      
+      th, td {
+        border: 1px solid #707070;
+        height: 60px;
+      }
+
+      th {
+        color: $cr-white;
+        background: $cr-black;
+        width: 280px;
+
+        @include mq('tab') {
+          width: 120px;
+        }
+      }
+
+      td {
+        text-align: left;
+        padding-left: 1em;
+      }
+    }
+
+    p {
+      text-align: left;
+    }
+  }
+}

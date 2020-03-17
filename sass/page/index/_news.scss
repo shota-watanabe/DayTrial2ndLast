@@ -1,0 +1,123 @@
+.news {
+  background: $cr-bg;
+  padding: 130px 0;
+
+  @include mq('tab') {
+    padding: 20px 16px;
+    position: relative;
+  }
+
+  .inner {
+    background: $cr-white;
+    box-shadow: 0px 5px 12px #3e3e3e33;
+    margin: 0 auto;
+    padding: 60px 50px 40px;
+    width: 1180px;
+
+    @include mq('tab') {
+      width: 100%;
+      position: relative;
+      top: -60px;
+      padding: {
+        top: 40px;
+        left: 0;
+        right: 0;
+      }
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 60px;
+
+      @include mq('tab') {
+        margin-bottom: 40px;
+      }
+    }
+
+    dl {
+      border-top: 1px solid $cr-gray;
+      border-bottom: 1px solid $cr-gray;
+      display: flex;
+      align-items: center;
+      // font-size: 0;
+      padding: 40px 30px 40px 10px;
+      position: relative;
+
+      @include mq('tab') {
+        flex-direction: column;
+        align-items: flex-start;
+        // text-align: left;
+        padding: 13px 47px 16px 16px;
+      }
+
+      + dl {
+        border-top: none;
+      }
+
+      &::after {
+        position: absolute;
+        content: url(../../../img/news-arrow.svg);
+        top: 50%;
+        right: 5px;
+        transform: translateY(-50%);
+      }
+
+      &:hover {
+        background: #ecf0ff;
+      }
+
+      dt {
+        @include mq('tab') {
+          margin-bottom: 10px;
+        }
+
+        div {
+          display: inline-block;
+        }
+
+        .date {
+          margin-right: 60px;
+
+          @include mq('tab') {
+            margin-right: 20px;
+          }
+        }
+
+        .category {
+          // display: inline-block;
+          font-size: 14px;
+          text-align: center;
+          border: 2px solid #3b69ff;
+          border-radius: 50px;
+          padding: 3px 32px;
+
+          @include mq('sp') {
+            padding: 3px 19px;
+          }
+        }
+      }
+
+      dd {
+        margin-left: 60px;
+        width: 697px;
+
+        @include mq('tab') {
+          margin-left: 0;
+          width: 100%;
+        }
+        @include mq('sp') {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .btn-wrapper {
+      margin-top: 40px;
+      text-align: center;
+
+      @include mq('sp') {
+        padding: 0 16px;
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.floating-wrap {
+  width: $layout-width-inner;
+  margin: 0 auto;
+
+  .floating {
+    display: none;
+    position: fixed;
+    z-index: map-get($layer, 'floating');
+    right: 16px;
+    bottom: 16px;
+
+    a {
+      display: block;
+      color: #fff;
+      background: #000;
+      // padding: 8px;
+      text-decoration: none;
+      opacity: .6;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}

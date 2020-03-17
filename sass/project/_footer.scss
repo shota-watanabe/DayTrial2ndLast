@@ -1,0 +1,178 @@
+.footer {
+  background: #3e3e3e;
+  color: #e3e3e3;
+  height: 425px;
+  padding: 120px 0;
+
+  @include mq('tab') {
+    padding: {
+      top: 60px;
+    }
+  }
+
+  .inner {
+    width: 1180px;
+    margin: 0 auto;
+
+    @include mq('tab') {
+      width: 100%;
+    }
+
+    .footer-left {
+      float: left;
+
+      @include mq('tab') {
+        float: none;
+      }
+    
+      .footer-sns {
+        margin-bottom: 40px;
+
+        @include mq('tab') {
+          display: flex;
+          justify-content: center;
+        }
+
+        li {
+          display: inline-block;
+
+          + li {
+            margin-left: 20px;
+
+            @include mq('tab') {
+              margin-left: 132px;
+            }
+          }
+
+          i {
+            font-size: 36px;
+          }
+        }
+      }
+
+      .footer-menu {
+        font-size: 18px;
+        font-weight: 500;
+
+        @include mq('sp') {
+          font-size: 14px;
+          margin: 0 auto;
+          width: 80%;
+        }
+
+        ul {
+
+          @include mq('tab') {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+          }
+          li {
+            @include mq('sp') {
+              padding-bottom: 1em;
+            }
+          }
+          
+          li + li {
+            margin-top: 20px;
+
+            @include mq('tab') {
+              margin-top: 0;
+            }
+          }
+        }
+        
+      }
+    }
+
+    .footer-right {
+      float: right;
+      margin-top: 43px;
+      text-align: right;
+
+      @include mq('tab') {
+        float: none;
+        text-align: center;
+      }
+
+      .company {
+        font-family: 'Berlin Sans FB';
+        font-size: 44px;
+        // font-weight: 600;
+        margin-right: 9px;
+        margin-bottom: 18px;
+
+        @include mq('tab') {
+          margin-bottom: 8px;
+        }
+        @include mq('sp') {
+          font-size: 34.4px;
+        }
+      }
+
+      .copyright {
+        font-family: $ff-mont;
+        font-size: 12px;
+      }
+    }
+  }
+
+  .footer-top {
+    overflow: hidden;
+
+    .footer-info {
+      float: left;
+      
+      .address {
+        margin-top: 30px;
+      }
+
+      .tel {
+        margin-top: 13px;
+      }
+    }
+
+    .footer-nav {
+      font-family: Lato, serif;
+      float: left;
+      margin-left: 155px;
+
+      @include mq('tab') {
+        float: right;
+        margin: 0 5px 0 0;
+      }
+
+      li {
+        display: inline-block;
+
+        @include mq('tab') {
+          display: block;
+        }
+      }
+      li + li {
+        margin-left: 10px;
+
+        @include mq('tab') {
+          margin: 0;
+        }
+      }
+    }
+
+    
+  }
+
+  .copy {
+    background: no-repeat center / contain url(../img/copy-bg.svg);
+    font-family: Lato, serif;
+    text-align: center;
+    height: 80px;
+    padding: 38px 0 0 0;
+    margin: 60px 0 0 0;
+
+    @include mq('tab') {
+      font-size: 0.7em;
+      height: 50px;
+      padding: 22px 0 0 0;
+    }
+  }
+}

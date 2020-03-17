@@ -1,0 +1,197 @@
+$navbar-width: 80vw;
+
+header {
+  // 全体レイアウト
+  nav {
+    background: $cr-bg-header;
+    color: $cr-txt;
+    display: flex;
+    font-family: $ff-header-navi;
+    flex-direction: row;
+    height: $header-height;
+    position: fixed;
+    width: 100%;
+    z-index: map-get($layer, 'header');
+
+    @include mq('tab') {
+      display: block;
+      height: $header-height-sp;
+    }
+    @include mq('sp') {
+      // background: $cr-red; // debug
+    }
+    
+    .drawer {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      height: $header-height;
+      justify-content: space-between;
+      padding: 0 1em;
+      position: relative;
+
+      @include mq('tab') {
+        height: $header-height-sp;
+      }
+
+      // トグル部分
+      .navbar-toggle {
+        display: none;
+        transition: ease .5s;
+        z-index: map-get($layer, 'header-toggle');
+
+        @include mq('tab') {
+          display: block;
+        }
+
+        .navbar-toggle-icon {
+          background: $cr-txt;
+          display: block;
+          height: 2px;
+          position: relative;
+          transition: ease .5s;
+          width: 30px;
+
+          
+
+          &:nth-child(1) {
+            top: 0;
+          }
+          &:nth-child(2) {
+            margin: 8px 0;
+          }
+          &:nth-child(3) {
+            top: 0;
+          }
+        }
+
+        // OPEN時の動き
+        &.open {
+          position: fixed;
+          top: 15px;
+          right: 15px;
+          transform: translateX(-$navbar-width);
+
+          .navbar-toggle-icon {
+
+            @include mq('tab') {
+              background: $cr-white;
+            }
+
+            &:nth-child(1) {
+              top: 10px;
+              transform: rotate(45deg);
+            }
+            &:nth-child(2) {
+              transform: translateY(-50%);
+              opacity: 0;
+            }
+            &:nth-child(3) {
+              top: -10px;
+              transform: rotate(-45deg);
+            }
+          }
+        }
+      }
+    }
+
+    // ナビゲーション部分
+    .menu {
+      transition: ease .5s;
+      position: relative;
+      z-index: map-get($layer, 'header-menu');
+      
+      // background: $cr-white;
+      color: $cr-txt;
+      height: 100%;
+      width: 100%;
+      transform: translateX(0);
+      @include mq('tab') {
+        background: $cr-white; // スマホナビの背景色
+        // transform: translateX(-100%); // 左からスライド
+        transform: translateX(100%); // 右からスライド
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: $navbar-width;
+      }
+
+      ul {
+        height: $header-height;
+        display: flex;
+        flex-wrap: wrap;
+        // justify-content: flex-end;
+        justify-content: center;
+        align-items: center;
+
+        @include mq('tab') {
+          height: 100%;
+          // display: block;
+          flex-direction: column;
+        }
+
+        li {
+          // padding: 0 1em;
+          padding: 0 20px;
+          border-bottom: none;
+
+          @include mq('tab') {
+            font-size: 18px;
+            padding: 10px;
+            // border-bottom: 1px solid #CCC;
+          }
+          
+          a {
+            text-decoration: none;
+            padding-bottom: 4.5px;
+            position: relative;
+
+            &.active {
+              border-bottom: 1px solid #7e7e7e;
+            }
+            &::after {
+              position: absolute;
+              content: "";
+              bottom: -1px;
+              left: 0;
+              width: 0;
+              height: 1px;
+              background: #7e7e7e;
+              transition: all .3s ease 0s;
+            }
+            &:hover::after {
+              cursor: pointer;
+              width: 100%;
+            }
+          }
+        }
+      } 
+    }
+    // OPEN時の動き
+    .menu.open {
+      transform: translateX(0);
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+  .overlay {
+    content: "";
+    display: block;
+    position: fixed;
+    width: 0;
+    height: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    // position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    opacity: 0;
+    transition: opacity .5s;
+
+    &.open {
+      width: 100%;
+      height: 100vh;
+      opacity: 1;
+    }
+  }
+}
