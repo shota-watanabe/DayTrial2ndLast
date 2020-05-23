@@ -924,7 +924,7 @@ body {
 }
 
 .comments .wrap .inner::after {
-	content: url(../../../img/comments3.png);
+	content: url(../img/comments3.png);
 	position: absolute;
 	right: 0;
 	top: 126px;
@@ -943,7 +943,7 @@ body {
 }
 
 .contact {
-	background: url(../../../img/alex-blajan-159378-unsplash.png) no-repeat center center/cover;
+	background: url(../img/alex-blajan-159378-unsplash.png) no-repeat center center/cover;
 	padding: 80px 0;
 }
 
@@ -955,7 +955,7 @@ body {
 }
 
 .contact .inner .contact-header {
-	background: url(../../../img/contact1.png) no-repeat center bottom/auto;
+	background: url(../img/contact1.png) no-repeat center bottom/auto;
 	border-radius: 12px 12px 0 0;
 	color: #fff;
 	padding: 61.5px 0;
@@ -1033,7 +1033,7 @@ body {
 }
 
 .faqs {
-	background: url(../../../img/sunyu-kim-1053375-unsplash.png) no-repeat center center/cover;
+	background: url(../img/sunyu-kim-1053375-unsplash.png) no-repeat center center/cover;
 	padding: 80px 0;
 	position: relative;
 }
@@ -1096,7 +1096,7 @@ body {
 }
 
 .main-visual {
-	background: url(../../../img/mv.png) no-repeat center center/cover;
+	background: url(../img/mv.png) no-repeat center center/cover;
 	height: 648px;
 	position: relative;
 	width: 100%;
@@ -1147,7 +1147,7 @@ body {
 }
 
 .news .inner dl::after {
-	content: url(../../../img/news-arrow.svg);
+	content: url(../img/news-arrow.svg);
 	position: absolute;
 	right: 5px;
 	top: 50%;
