@@ -68,7 +68,7 @@
   &.pm--svg {
 
     &::after {
-      content: url(../../img/plus.svg);
+      content: url(../img/plus.svg);
       position: absolute;
       top: 50%;
       right: 0;
@@ -76,7 +76,7 @@
     }
 
     &.open::after {
-      content: url(../../img/minus.svg);
+      content: url(../img/minus.svg);
       position: absolute;
       top: 50%; 
       right: 0;
