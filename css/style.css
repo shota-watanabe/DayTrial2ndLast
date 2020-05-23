@@ -398,7 +398,7 @@ dl:after {
 }
 
 .js-accordion.pm--svg::after {
-	content: url(../../img/plus.svg);
+	content: url(../img/plus.svg);
 	position: absolute;
 	right: 0;
 	top: 50%;
@@ -406,7 +406,7 @@ dl:after {
 }
 
 .js-accordion.pm--svg.open::after {
-	content: url(../../img/minus.svg);
+	content: url(../img/minus.svg);
 	position: absolute;
 	right: 0;
 	top: 50%;
